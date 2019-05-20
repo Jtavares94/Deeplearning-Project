@@ -18,9 +18,9 @@ with open('D:/HBO/Jaar 3/Minor/Data/test.csv', 'r') as csvfile:
         req.urlretrieve(image, "Deeplearning-Project/images/" + id + ".jpg")
       except urllib.error.HTTPError as err:
         if err.code == 403:
-          print("error")
+          print("error code: 403")
         else:
-          print("test")
+          print("error")
 
       #print(image)
   
