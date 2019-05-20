@@ -1,4 +1,5 @@
 import urllib.request as req
+import urllib
 import csv
 
 imageurl = "https://lh3.googleusercontent.com/-q8B91vDIQZY/WM-q-ZAfhDI/AAAAAAAAGYw/wr1Cn1kzSCkC5uX_zbkGyn7pYzCzng6dgCOcB/s1600/"
@@ -12,8 +13,15 @@ with open('D:/HBO/Jaar 3/Minor/Data/test.csv', 'r') as csvfile:
     if image == "None":
       print("none")
     else:
-      id = str(row[0])
-      req.urlretrieve(image, "Deeplearning-Project/images/" + id + ".jpg")
+      try:
+        id = str(row[0])
+        req.urlretrieve(image, "Deeplearning-Project/images/" + id + ".jpg")
+      except urllib.error.HTTPError as err:
+        if err.code == 403:
+          print("error")
+        else:
+          print("test")
+
       #print(image)
   
 
