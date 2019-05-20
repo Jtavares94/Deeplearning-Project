@@ -3,7 +3,7 @@ import glob
 
 image_list = []
 
-images = glob.glob("images/*.jpg")
+images = glob.glob("Deeplearning-Project/images/*.jpg")
 for image in images:
   #im = Image.open(image)
   #image_list.append(im)
